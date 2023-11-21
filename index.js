@@ -10,6 +10,7 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
   userChoice = e.target.id;
   userChoiceDisplay.innerHTML = userChoice;
   generateComputerChoice();
+  getResult();
 }))
 
 function generateComputerChoice() {
@@ -27,3 +28,28 @@ function generateComputerChoice() {
   computerChoiceDisplay.innerHTML = computerChoice;
   
 }
+
+function getResult() {
+  if (computerChoice === userChoice) {
+    result = 'It\'s a draw!';
+  }
+  if (computerChoice === 'rock' && userChoice === 'paper') {
+    result = 'You win!';
+  }
+  if (computerChoice === 'rock' && userChoice === 'scissors') {
+    result = 'You lose!';
+  }
+  if (computerChoice === 'paper' && userChoice === 'rock') {
+    result = 'You lose!';
+  }
+  if (computerChoice === 'paper' && userChoice === 'scissors') {
+    result = 'You win!';
+  }
+  if (computerChoice === 'scissors' && userChoice === 'rock') {
+    result = 'You win!';
+  }
+  if (computerChoice === 'scissors' && userChoice === 'paper') {
+    result = 'You lose!';
+  }
+  resultDisplay.innerHTML = result;
+  }
